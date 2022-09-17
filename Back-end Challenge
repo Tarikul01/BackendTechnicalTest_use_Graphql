@@ -1,0 +1,34 @@
+Using GraphQL, write a query to return a book with an argument of ISBN which is equal to the string 0743273567. A book is retrieved from the database and converted into an object with the following structure:
+
+
+For the book query, return the fields in the following order:
+
+title, author, published, publisher, pages, genres, reviews
+
+
+A review object has the fields: author, date, and content. Finally, make sure to set a limit of 1 for the reviews field.
+Browse Resources
+Search for any help or documentation you might need for this problem. For example: array indexing, Ruby hash tables, etc.
+
+
+
+
+
+Solutions:
+
+
+query {
+  book(ISBN:"0743273567") {
+    title
+    author
+    published
+    publisher
+    pages
+    genres
+    reviews(limit:1){
+      author
+      date
+      content
+    }
+  }
+}
